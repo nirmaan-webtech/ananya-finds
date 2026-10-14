@@ -1,0 +1,3124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf7f2">
+  <meta name="color-scheme" content="light">
+  <meta name="description"
+    content="Shop Ananya Finds — curated ethnic wear, co-ord sets and everyday fashion finds at pocket-friendly prices.">
+  <title>Ananya Finds — Trendy Fashion, Made Easy</title>
+  <style>
+    :root {
+      --ink: #241e20;
+      --muted: #74696b;
+      --cream: #fbf7f2;
+      --paper: #fffdfa;
+      --rose: #8f3d58;
+      --rose2: #a44b66;
+      --rose-light: #f3e2e4;
+      --line: #e9ddda;
+      --gold: #d7a85b;
+      --max: 1320px;
+      --shadow: 0 12px 36px rgba(61, 35, 42, .12)
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 135px
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.6
+    }
+
+    button,
+    input,
+    select {
+      font: inherit
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    button {
+      cursor: pointer
+    }
+
+    img {
+      display: block;
+      max-width: 100%
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 42px));
+      margin: auto
+    }
+
+    .skip {
+      position: absolute;
+      left: -9999px
+    }
+
+    .skip:focus {
+      left: 12px;
+      top: 12px;
+      z-index: 100;
+      background: white;
+      padding: 12px
+    }
+
+    .announcement {
+      background: linear-gradient(90deg, #7b314a, #a14b62, #7b314a);
+      color: #fff;
+      font-size: 12px;
+      padding: 7px 20px
+    }
+
+    .announcement-inner {
+      max-width: var(--max);
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px
+    }
+
+    .announcement .right {
+      font-size: 11px;
+      opacity: .94
+    }
+
+    .announcement .spark {
+      color: #f5cb74;
+      margin-right: 5px
+    }
+
+    .site-head {
+      background: rgba(255, 253, 250, .97);
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .head-main {
+      max-width: var(--max);
+      margin: auto;
+      padding: 10px 21px;
+      display: grid;
+      grid-template-columns: 1fr minmax(260px, 530px) 1fr;
+      align-items: center;
+      gap: 28px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0
+    }
+
+    .brand img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      object-position: center 20%;
+      border-radius: 50%;
+      border: 1px solid #e5d4d1
+    }
+
+    .brand-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 35px;
+      line-height: .9;
+      letter-spacing: -1.5px;
+      white-space: nowrap
+    }
+
+    .brand-title em {
+      font-weight: 400;
+      color: var(--rose)
+    }
+
+    .brand-sub {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      color: var(--rose);
+      text-align: center;
+      margin-top: 7px
+    }
+
+    .search-form {
+      height: 43px;
+      display: flex;
+      border: 1px solid #dfd3d0;
+      border-radius: 13px;
+      overflow: hidden;
+      background: white
+    }
+
+    .search-form input {
+      min-width: 0;
+      flex: 1;
+      border: 0;
+      outline: 0;
+      padding: 0 15px;
+      font-size: 12px;
+      background: transparent
+    }
+
+    .search-form button {
+      border: 0;
+      background: var(--rose);
+      color: white;
+      padding: 0 23px;
+      font-size: 12px;
+      font-weight: 700
+    }
+
+    .head-actions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 22px
+    }
+
+    .head-action {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      background: none;
+      border: 0;
+      color: var(--ink);
+      font-size: 10px;
+      min-width: 40px
+    }
+
+    .head-action svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5
+    }
+
+    .count {
+      position: absolute;
+      top: -7px;
+      right: 0;
+      min-width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--rose);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 10px;
+      padding: 0 4px
+    }
+
+    .nav-wrap {
+      border-top: 1px solid #f1e9e5
+    }
+
+    .main-nav {
+      max-width: var(--max);
+      margin: auto;
+      padding: 0 21px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 19px;
+      overflow: auto;
+      scrollbar-width: none
+    }
+
+    .main-nav::-webkit-scrollbar {
+      display: none
+    }
+
+    .main-nav a {
+      white-space: nowrap;
+      font-size: 14px;
+      padding: 11px 0 10px;
+      position: relative
+    }
+
+    .main-nav a.active:after,
+    .main-nav a:hover:after {
+      content: "";
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--rose)
+    }
+
+    .mobile-menu {
+      display: none
+    }
+
+    .hero {
+      padding: 0;
+      width: 100%;
+      max-width: none;
+      margin: 0
+    }
+
+    .hero-banner {
+      width: 100%;
+      border-radius: 0;
+      position: relative;
+      display: grid;
+      grid-template-columns: .91fr 1.09fr;
+      min-height: 410px;
+      overflow: hidden;
+      background: #f1e0d4
+    }
+
+    .hero-copy {
+      padding: 44px max(28px, calc((100vw - var(--max))/2 + 28px));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      background: radial-gradient(ellipse at 10% 20%, #fffaf2 0, rgba(255, 250, 242, .6) 43%, transparent 75%), linear-gradient(120deg, #f8e9dc, #edd2c2)
+    }
+
+    .overline {
+      font-size: 12px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 11px
+    }
+
+    .hero h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 500;
+      font-size: clamp(38px, 4vw, 61px);
+      letter-spacing: -1.8px;
+      line-height: .99;
+      margin: 0 0 19px;
+      max-width: 500px
+    }
+
+    .hero h1 em {
+      color: var(--rose);
+      font-weight: 400
+    }
+
+    .hero-copy p {
+      font-size: 17px;
+      line-height: 1.55;
+      color: #51474a;
+      max-width: 500px;
+      margin: 0 0 17px
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px
+    }
+
+    .btn {
+      min-height: 48px;
+      border-radius: 999px;
+      padding: 0 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid transparent;
+      font-size: 14px;
+      font-weight: 700;
+      transition: transform .2s, background .2s
+    }
+
+    .btn:hover {
+      transform: translateY(-1px)
+    }
+
+    .btn-primary {
+      background: var(--rose);
+      color: #fff
+    }
+
+    .btn-primary:hover {
+      background: #733048
+    }
+
+    .btn-outline {
+      border-color: var(--rose);
+      color: var(--rose);
+      background: transparent
+    }
+
+    .hero-benefits {
+      display: flex;
+      gap: 21px;
+      flex-wrap: wrap;
+      margin-top: 22px
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      line-height: 1.15
+    }
+
+    .benefit svg {
+      width: 23px;
+      height: 23px;
+      stroke: var(--rose);
+      fill: none;
+      stroke-width: 1.6;
+      flex-shrink: 0
+    }
+
+    .hero-image {
+      position: relative;
+      min-height: 410px;
+      overflow: hidden;
+      background: #c9a08b
+    }
+
+    .hero-image>img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      object-position: center 10%;
+      image-rendering: auto
+    }
+
+    .hero-image:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(42, 24, 25, .05), transparent 40%, rgba(30, 18, 20, .08));
+      pointer-events: none
+    }
+
+    .hero-script {
+      position: absolute;
+      right: 4%;
+      top: 36%;
+      z-index: 2;
+      font-family: Georgia, serif;
+      font-style: italic;
+      color: #fff;
+      text-align: center;
+      font-size: clamp(17px, 2vw, 27px);
+      line-height: 1.25;
+      text-shadow: 0 1px 9px rgba(40, 20, 20, .45);
+      transform: rotate(-7deg)
+    }
+
+    .hero-next {
+      position: absolute;
+      z-index: 3;
+      right: 18px;
+      top: 46%;
+      border: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--rose);
+      color: #fff;
+      font-size: 25px;
+      box-shadow: 0 4px 20px #56313c35
+    }
+
+    .hero-dots {
+      position: absolute;
+      z-index: 3;
+      bottom: 16px;
+      left: 50%;
+      display: flex;
+      gap: 9px
+    }
+
+    .hero-dots i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #fff9;
+      border: 1px solid #fff
+    }
+
+    .hero-dots i:first-child {
+      background: var(--rose)
+    }
+
+    .category-strip {
+      padding: 15px 0 8px;
+      border-bottom: 1px solid #f0e5e1;
+      background: rgba(255, 253, 250, .48)
+    }
+
+    .category-shortcuts {
+      display: grid;
+      grid-template-columns: repeat(10, minmax(72px, 1fr));
+      gap: 12px;
+      overflow: auto;
+      scrollbar-width: thin;
+      padding: 0 0 8px
+    }
+
+    .shortcut {
+      border: 0;
+      background: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      min-width: 0;
+      color: var(--ink);
+      font-size: 14px;
+      white-space: nowrap
+    }
+
+    .shortcut .circle {
+      width: 83px;
+      height: 83px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #f2e4df;
+      border: 1px solid transparent;
+      display: grid;
+      place-items: center;
+      transition: border .2s, transform .2s
+    }
+
+    .shortcut:hover .circle,
+    .shortcut.active .circle {
+      border-color: var(--rose);
+      transform: translateY(-2px)
+    }
+
+    .shortcut img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top
+    }
+
+    .shortcut .all-icon {
+      font-size: 27px;
+      color: var(--rose)
+    }
+
+    .shortcut .budget {
+      font-family: Georgia, serif;
+      font-size: 22px;
+      color: var(--rose)
+    }
+
+    .shortcut small {
+      font-size: 11px
+    }
+
+    .section {
+      padding: 31px 0 38px
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 15px
+    }
+
+    .section h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(27px, 3vw, 37px);
+      font-weight: 500;
+      letter-spacing: -.9px;
+      line-height: 1.1;
+      margin: 0
+    }
+
+    .section h2 .star {
+      font-family: Arial, sans-serif;
+      color: #e3a650;
+      font-size: 24px
+    }
+
+    .section-sub {
+      font-size: 15px;
+      color: var(--muted);
+      margin: 4px 0 0
+    }
+
+    .view-all {
+      border: 1px solid #e2c3c7;
+      background: transparent;
+      color: var(--rose);
+      border-radius: 999px;
+      padding: 9px 15px;
+      font-size: 12px;
+      white-space: nowrap
+    }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      overflow: auto;
+      padding: 0 0 14px;
+      scrollbar-width: none
+    }
+
+    .filters::-webkit-scrollbar {
+      display: none
+    }
+
+    .filter {
+      white-space: nowrap;
+      border: 1px solid var(--line);
+      background: #fffaf7;
+      border-radius: 999px;
+      padding: 9px 15px;
+      font-size: 13px;
+      color: #62565a
+    }
+
+    .filter.active,
+    .filter:hover {
+      background: var(--rose);
+      border-color: var(--rose);
+      color: #fff
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 14px
+    }
+
+    .product-card {
+      min-width: 0;
+      background: transparent;
+      position: relative
+    }
+
+    .product-photo {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1.03/1;
+      border-radius: 7px;
+      background: #eadbd5
+    }
+
+    .product-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform .35s
+    }
+
+    .product-card:hover .product-photo img {
+      transform: scale(1.035)
+    }
+
+    .discount {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      background: var(--rose);
+      color: #fff;
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 10px
+    }
+
+    .wish {
+      position: absolute;
+      right: 7px;
+      top: 7px;
+      width: 29px;
+      height: 29px;
+      border: 0;
+      border-radius: 50%;
+      background: #ffffffdf;
+      display: grid;
+      place-items: center;
+      color: var(--rose)
+    }
+
+    .wish svg {
+      width: 17px;
+      height: 17px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.6
+    }
+
+    .product-title {
+      font-size: 14px;
+      margin: 7px 3px 4px;
+      line-height: 1.3;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 7px;
+      margin: 0 3px
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: 700;
+      color: #62243a
+    }
+
+    .old-price {
+      font-size: 13px;
+      color: #8e8587;
+      text-decoration: line-through
+    }
+
+    .rating {
+      margin: 4px 3px 0;
+      font-size: 12px;
+      color: #6d6566
+    }
+
+    .rating b {
+      color: #f1a70b;
+      font-size: 13px;
+      margin-right: 3px
+    }
+
+    .add-product {
+      margin: 9px 3px 0;
+      width: calc(100% - 6px);
+      border: 1px solid #d7b6bd;
+      color: var(--rose);
+      background: transparent;
+      border-radius: 7px;
+      padding: 10px 5px;
+      font-size: 12px;
+      font-weight: 700
+    }
+
+    .add-product:hover {
+      background: var(--rose);
+      color: #fff
+    }
+
+    .sample-note {
+      font-size: 10px;
+      color: #887d7f;
+      margin: 16px 0 0
+    }
+
+    .editorial-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      padding-bottom: 35px
+    }
+
+    .editorial {
+      position: relative;
+      min-height: 220px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #d6b8a9
+    }
+
+    .editorial img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top
+    }
+
+    .editorial:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(35, 22, 25, .7), rgba(35, 22, 25, .05))
+    }
+
+    .editorial-copy {
+      position: relative;
+      z-index: 1;
+      color: white;
+      padding: 28px;
+      max-width: 330px
+    }
+
+    .editorial-copy small {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 9px
+    }
+
+    .editorial-copy h3 {
+      font: 500 28px/1.05 Georgia, serif;
+      margin: 10px 0
+    }
+
+    .editorial-copy p {
+      font-size: 11px;
+      line-height: 1.6;
+      color: #fff;
+      margin-bottom: 13px
+    }
+
+    .editorial-copy .btn {
+      background: white;
+      color: var(--rose);
+      min-height: 36px
+    }
+
+    .footer {
+      background: #2d2226;
+      color: #fff;
+      padding: 32px 0 18px
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      align-items: start
+    }
+
+    .footer-brand {
+      font: 28px Georgia, serif
+    }
+
+    .footer p {
+      max-width: 430px;
+      font-size: 13px;
+      color: #d2c4c7;
+      line-height: 1.7
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 13px
+    }
+
+    .footer-bottom {
+      margin-top: 22px;
+      padding-top: 13px;
+      border-top: 1px solid #58454b;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: #c7b6bb;
+      font-size: 10px
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: #21171b77;
+      z-index: 60;
+      opacity: 0;
+      visibility: hidden;
+      transition: .2s
+    }
+
+    .overlay.open {
+      opacity: 1;
+      visibility: visible
+    }
+
+    .cart {
+      position: fixed;
+      z-index: 61;
+      right: 0;
+      top: 0;
+      height: 100dvh;
+      width: min(420px, 100%);
+      background: var(--paper);
+      transform: translateX(100%);
+      transition: transform .25s;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow)
+    }
+
+    .cart.open {
+      transform: translateX(0)
+    }
+
+    .cart-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .cart-head h2 {
+      font: 28px Georgia, serif;
+      margin: 0
+    }
+
+    .close {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: #fff;
+      font-size: 20px
+    }
+
+    .cart-items {
+      padding: 16px 20px;
+      overflow: auto;
+      flex: 1
+    }
+
+    .empty {
+      text-align: center;
+      padding: 50px 5px;
+      color: var(--muted);
+      font-size: 12px
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 65px 1fr auto;
+      gap: 11px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .cart-item img {
+      width: 65px;
+      height: 78px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 5px
+    }
+
+    .cart-item h3 {
+      font-size: 12px;
+      margin: 3px 0
+    }
+
+    .cart-item p {
+      font-size: 12px;
+      font-weight: 700;
+      margin: 0
+    }
+
+    .qty {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 8px;
+      font-size: 11px
+    }
+
+    .qty button {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 50%;
+      width: 23px;
+      height: 23px
+    }
+
+    .remove {
+      border: 0;
+      background: none;
+      color: var(--muted);
+      text-decoration: underline;
+      font-size: 10px;
+      padding: 0;
+      margin-top: 6px
+    }
+
+    .cart-foot {
+      padding: 18px 20px;
+      border-top: 1px solid var(--line)
+    }
+
+    .subtotal {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 8px
+    }
+
+    .disclaimer {
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.5
+    }
+
+    .checkout {
+      width: 100%;
+      border: 0;
+      border-radius: 999px;
+      background: var(--rose);
+      color: #fff;
+      min-height: 44px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 10px
+    }
+
+    .toast {
+      position: fixed;
+      z-index: 90;
+      bottom: 20px;
+      left: 50%;
+      transform: translate(-50%, 15px);
+      opacity: 0;
+      background: var(--ink);
+      color: #fff;
+      padding: 11px 17px;
+      border-radius: 999px;
+      font-size: 11px;
+      transition: .2s;
+      pointer-events: none
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translate(-50%, 0)
+    }
+
+    @media(max-width:1050px) {
+      .head-main {
+        grid-template-columns: 1fr minmax(230px, 1fr) auto;
+        gap: 15px
+      }
+
+      .brand-title {
+        font-size: 29px
+      }
+
+      .brand img {
+        width: 52px;
+        height: 52px
+      }
+
+      .head-actions {
+        gap: 10px
+      }
+
+      .main-nav {
+        gap: 18px
+      }
+
+      .hero-banner {
+        grid-template-columns: .95fr 1.05fr;
+        min-height: 390px
+      }
+
+      .hero-image {
+        min-height: 390px
+      }
+
+      .hero-copy {
+        padding: 34px
+      }
+
+      .hero h1 {
+        font-size: 48px
+      }
+
+      .hero-benefits {
+        gap: 12px
+      }
+
+      .benefit {
+        font-size: 12px
+      }
+
+      .category-shortcuts {
+        grid-template-columns: repeat(10, 85px)
+      }
+
+      .shortcut .circle {
+        width: 72px;
+        height: 72px
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr))
+      }
+    }
+
+    @media(max-width:700px) {
+      html {
+        scroll-padding-top: 120px
+      }
+
+      .container {
+        width: calc(100% - 24px)
+      }
+
+      .announcement-inner {
+        justify-content: center;
+        text-align: center
+      }
+
+      .announcement .right {
+        display: none
+      }
+
+      .head-main {
+        grid-template-columns: 1fr auto;
+        padding: 9px 12px;
+        gap: 10px
+      }
+
+      .brand img {
+        width: 43px;
+        height: 43px
+      }
+
+      .brand-title {
+        font-size: 26px
+      }
+
+      .brand-sub {
+        font-size: 7px;
+        letter-spacing: 1.5px;
+        margin-top: 5px
+      }
+
+      .search-form {
+        grid-column: 1/3;
+        grid-row: 2;
+        height: 38px;
+        order: 3
+      }
+
+      .head-actions {
+        grid-column: 2;
+        grid-row: 1;
+        gap: 8px
+      }
+
+      .head-action {
+        min-width: 31px;
+        font-size: 9px
+      }
+
+      .head-action svg {
+        width: 20px;
+        height: 20px
+      }
+
+      .main-nav {
+        padding: 0 12px;
+        justify-content: flex-start;
+        gap: 20px
+      }
+
+      .main-nav a {
+        font-size: 11px
+      }
+
+      .hero-banner {
+        grid-template-columns: 1fr;
+        min-height: 0
+      }
+
+      .hero-image {
+        order: 0;
+        height: 300px;
+        min-height: 300px
+      }
+
+      .hero-copy {
+        order: 1;
+        padding: 30px 22px 28px
+      }
+
+      .hero h1 {
+        font-size: 46px;
+        max-width: 440px;
+        margin-bottom: 13px
+      }
+
+      .hero-copy p {
+        font-size: 15px;
+        margin-bottom: 16px
+      }
+
+      .hero-benefits {
+        gap: 15px;
+        margin-top: 18px
+      }
+
+      .hero-script {
+        right: 5%;
+        top: 35%;
+        font-size: 19px
+      }
+
+      .hero-next {
+        width: 38px;
+        height: 38px;
+        right: 10px
+      }
+
+      .hero-dots {
+        left: auto;
+        right: 60px;
+        bottom: 14px
+      }
+
+      .category-strip {
+        padding-top: 12px
+      }
+
+      .category-shortcuts {
+        grid-template-columns: repeat(10, 72px);
+        gap: 7px
+      }
+
+      .shortcut {
+        font-size: 10px
+      }
+
+      .shortcut .circle {
+        width: 61px;
+        height: 61px
+      }
+
+      .shortcut .budget {
+        font-size: 18px
+      }
+
+      .section {
+        padding: 26px 0 30px
+      }
+
+      .section-head {
+        margin-bottom: 13px;
+        gap: 10px
+      }
+
+      .section h2 {
+        font-size: 29px
+      }
+
+      .section-sub {
+        font-size: 13px
+      }
+
+      .view-all {
+        font-size: 10px;
+        padding: 8px 10px
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px 10px
+      }
+
+      .product-photo {
+        aspect-ratio: 1/1.08
+      }
+
+      .product-title {
+        font-size: 13px
+      }
+
+      .price {
+        font-size: 15px
+      }
+
+      .old-price {
+        font-size: 12px
+      }
+
+      .rating {
+        font-size: 11px
+      }
+
+      .add-product {
+        padding: 10px 4px;
+        font-size: 12px
+      }
+
+      .editorial-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding-bottom: 25px
+      }
+
+      .editorial {
+        min-height: 205px
+      }
+
+      .editorial-copy {
+        padding: 23px
+      }
+
+      .editorial-copy h3 {
+        font-size: 26px
+      }
+
+      .footer-top {
+        display: block
+      }
+
+      .footer-links {
+        margin-top: 15px;
+        gap: 13px
+      }
+
+      .footer-bottom {
+        flex-direction: column
+      }
+
+      .cart-item img {
+        width: 60px;
+        height: 73px
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *:before,
+      *:after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important
+      }
+    }
+
+    .benefits-panel {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 34px;
+      background: #fffdfa;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: clamp(24px, 4vw, 48px);
+      box-shadow: 0 12px 30px rgba(61, 35, 42, .045)
+    }
+
+    .benefits-heading .overline {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 3px;
+      margin-bottom: 12px
+    }
+
+    .benefits-heading h2 {
+      font: 500 clamp(30px, 3vw, 42px)/1.06 Georgia, serif;
+      letter-spacing: -1px;
+      margin: 0 0 15px
+    }
+
+    .benefits-heading h2 em {
+      color: var(--rose);
+      font-weight: 400
+    }
+
+    .benefits-heading p,
+    .benefits-list p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.75;
+      margin: 0
+    }
+
+    .benefits-list {
+      display: grid;
+      gap: 13px
+    }
+
+    .benefits-list article {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 16px;
+      border: 1px solid #efe4e1;
+      border-radius: 13px;
+      background: #fff
+    }
+
+    .benefit-icon {
+      flex: 0 0 39px;
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--rose-light);
+      color: var(--rose);
+      font-size: 22px
+    }
+
+    .benefits-list h3 {
+      font-size: 16px;
+      margin: 0 0 5px
+    }
+
+    .faq-section {
+      padding-bottom: 55px
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px
+    }
+
+    .faq-grid details {
+      background: #fffdfa;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 17px 18px
+    }
+
+    .faq-grid summary {
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px
+    }
+
+    .faq-grid summary:after {
+      content: "+";
+      color: var(--rose);
+      font-size: 20px;
+      line-height: 1
+    }
+
+    .faq-grid details[open] summary:after {
+      content: "−"
+    }
+
+    .faq-grid details p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 12px 0 0
+    }
+
+    .checkout-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      background: #21171bc7;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      overflow: auto
+    }
+
+    .checkout-overlay.open {
+      display: flex
+    }
+
+    .checkout-modal {
+      width: min(900px, 100%);
+      max-height: 94dvh;
+      overflow: auto;
+      background: var(--paper);
+      border-radius: 20px;
+      box-shadow: 0 25px 90px #0004
+    }
+
+    .checkout-head {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 20px 24px;
+      background: rgba(255, 253, 250, .97);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .checkout-head h2 {
+      font: 500 30px Georgia, serif;
+      margin: 0
+    }
+
+    .checkout-body {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 26px;
+      padding: 24px
+    }
+
+    .checkout-form h3,
+    .checkout-summary h3 {
+      font: 500 22px Georgia, serif;
+      margin: 0 0 15px
+    }
+
+    .checkout-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px
+    }
+
+    .checkout-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 0
+    }
+
+    .checkout-field.full {
+      grid-column: 1/-1
+    }
+
+    .checkout-field label {
+      font-size: 13px;
+      font-weight: 700
+    }
+
+    .checkout-field input,
+    .checkout-field textarea,
+    .checkout-field select {
+      width: 100%;
+      min-width: 0;
+      border: 1px solid #dfd3d0;
+      background: #fff;
+      border-radius: 9px;
+      padding: 12px 13px;
+      font-size: 15px;
+      outline: none
+    }
+
+    .checkout-field input:focus,
+    .checkout-field textarea:focus,
+    .checkout-field select:focus {
+      border-color: var(--rose);
+      box-shadow: 0 0 0 3px #8f3d5815
+    }
+
+    .checkout-field textarea {
+      min-height: 80px;
+      resize: vertical
+    }
+
+    .payment-options {
+      display: grid;
+      gap: 9px;
+      margin-top: 5px
+    }
+
+    .payment-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      font-size: 14px
+    }
+
+    .payment-option input {
+      margin-top: 4px;
+      accent-color: var(--rose)
+    }
+
+    .payment-option small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 3px
+    }
+
+    .checkout-summary {
+      background: #f7efeb;
+      border-radius: 14px;
+      padding: 20px;
+      height: max-content
+    }
+
+    .checkout-lines {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 18px
+    }
+
+    .checkout-line {
+      display: grid;
+      grid-template-columns: 48px 1fr auto;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px
+    }
+
+    .checkout-line img {
+      width: 48px;
+      height: 58px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 7px
+    }
+
+    .checkout-line small {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 3px
+    }
+
+    .checkout-totals {
+      border-top: 1px solid #e3d4cf;
+      padding-top: 13px;
+      display: grid;
+      gap: 9px;
+      font-size: 14px
+    }
+
+    .checkout-total {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 800;
+      font-size: 17px;
+      padding-top: 6px
+    }
+
+    .checkout-note {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 15px 0
+    }
+
+    .place-order {
+      width: 100%;
+      border: 0;
+      border-radius: 999px;
+      min-height: 49px;
+      background: var(--rose);
+      color: white;
+      font-size: 15px;
+      font-weight: 800
+    }
+
+    .demo-disclaimer {
+      font-size: 11px !important;
+      color: #8b747b !important;
+      text-align: center;
+      margin: 10px 0 0 !important
+    }
+
+    .order-success {
+      padding: 42px 28px;
+      text-align: center;
+      display: none
+    }
+
+    .order-success .success-mark {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #e4efe4;
+      color: #356342;
+      font-size: 28px;
+      margin: 0 auto 18px
+    }
+
+    .order-success h2 {
+      font: 500 34px Georgia, serif;
+      margin: 0 0 10px
+    }
+
+    .order-success p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 18px
+    }
+
+    .order-number {
+      background: #f7efeb;
+      border: 1px dashed #d4b9bd;
+      border-radius: 10px;
+      padding: 14px;
+      font-weight: 800;
+      letter-spacing: .05em;
+      margin: 18px auto;
+      max-width: 340px
+    }
+
+    @media(max-width:760px) {
+      .hero-copy {
+        padding: 30px 24px
+      }
+
+      .benefits-panel {
+        grid-template-columns: 1fr;
+        gap: 23px;
+        padding: 23px
+      }
+
+      .benefits-heading p,
+      .benefits-list p {
+        font-size: 14px
+      }
+
+      .benefits-list h3 {
+        font-size: 15px
+      }
+
+      .faq-grid {
+        grid-template-columns: 1fr
+      }
+
+      .checkout-body {
+        grid-template-columns: 1fr;
+        padding: 18px
+      }
+
+      .checkout-summary {
+        order: 0
+      }
+
+      .checkout-form {
+        order: 1
+      }
+
+      .checkout-head {
+        padding: 16px 18px
+      }
+
+      .checkout-head h2 {
+        font-size: 26px
+      }
+
+      .checkout-fields {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .checkout-field input,
+      .checkout-field textarea,
+      .checkout-field select {
+        font-size: 16px;
+        padding: 12px
+      }
+
+      .checkout-overlay {
+        align-items: flex-start;
+        padding: 8px
+      }
+
+      .checkout-modal {
+        max-height: calc(100dvh - 16px);
+        border-radius: 14px
+      }
+    }
+
+    @media(max-width:480px) {
+      body {
+        font-size: 16px
+      }
+
+      .hero-image {
+        height: 290px;
+        min-height: 290px
+      }
+
+      .hero h1 {
+        font-size: 43px
+      }
+
+      .hero-copy p {
+        font-size: 15px
+      }
+
+      .hero-benefits {
+        gap: 12px
+      }
+
+      .benefit {
+        font-size: 12px
+      }
+
+      .section h2 {
+        font-size: 28px
+      }
+
+      .section-sub {
+        font-size: 13px
+      }
+
+      .product-title {
+        font-size: 13px;
+        white-space: normal;
+        min-height: 34px
+      }
+
+      .rating {
+        font-size: 11px
+      }
+
+      .add-product {
+        font-size: 12px
+      }
+
+      .checkout-fields {
+        grid-template-columns: 1fr
+      }
+
+      .checkout-field.full {
+        grid-column: auto
+      }
+
+      .checkout-summary {
+        padding: 15px
+      }
+
+      .checkout-line {
+        grid-template-columns: 42px 1fr auto
+      }
+
+      .checkout-line img {
+        width: 42px;
+        height: 52px
+      }
+    }
+
+    /* Premium visual refinement — overrides for consistent spacing, legibility and product presentation */
+    :root {
+      --ink: #261d20;
+      --muted: #706467;
+      --cream: #fcf8f5;
+      --paper: #fffdfb;
+      --rose: #87364f;
+      --rose2: #a24a65;
+      --rose-light: #f4e6e7;
+      --line: #eadfdb;
+      --gold: #c99c52;
+      --max: 1320px;
+      --shadow: 0 16px 42px rgba(54, 30, 38, .09)
+    }
+
+    body {
+      font-size: 17px;
+      line-height: 1.65;
+      background: #fcf8f5
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 64px))
+    }
+
+    .announcement {
+      font-size: 12px;
+      padding: 9px 24px;
+      letter-spacing: .025em
+    }
+
+    .head-main {
+      padding: 13px 28px;
+      gap: 30px
+    }
+
+    .brand img {
+      width: 58px;
+      height: 58px;
+      object-position: center 18%
+    }
+
+    .brand-title {
+      font-size: 34px
+    }
+
+    .brand-sub {
+      font-size: 10px;
+      letter-spacing: 2px
+    }
+
+    .search-form {
+      height: 48px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #fff;
+      border-color: #e5d6d4
+    }
+
+    .search-form input {
+      font-size: 14px;
+      padding: 0 18px
+    }
+
+    .search-form button {
+      font-size: 13px;
+      padding: 0 24px
+    }
+
+    .head-action {
+      font-size: 12px;
+      gap: 5px
+    }
+
+    .head-action svg {
+      width: 24px;
+      height: 24px
+    }
+
+    .nav-wrap {
+      background: #fffdfa
+    }
+
+    .main-nav {
+      min-height: 46px;
+      gap: clamp(13px, 1.65vw, 25px);
+      padding: 0 28px
+    }
+
+    .main-nav a {
+      font-size: 13px;
+      padding: 13px 0
+    }
+
+    .hero {
+      padding: 0 !important;
+      margin: 0 !important;
+      width: 100% !important;
+      max-width: none !important
+    }
+
+    .hero-banner {
+      min-height: clamp(510px, 42vw, 640px);
+      grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+      background: #f1e3d9
+    }
+
+    .hero-copy {
+      padding: 58px clamp(30px, 3vw, 48px) 58px clamp(38px, calc((100vw - var(--max))/2 + 30px), min(18vw, 240px));
+      min-width: 0
+    }
+
+    .overline {
+      font-size: 12px;
+      letter-spacing: 4px;
+      margin-bottom: 18px
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 4.3vw, 70px);
+      line-height: 1.02;
+      letter-spacing: -2px;
+      margin-bottom: 23px
+    }
+
+    .hero-copy p {
+      font-size: 18px;
+      line-height: 1.75;
+      max-width: 500px;
+      margin-bottom: 25px
+    }
+
+    .btn {
+      font-size: 14px;
+      min-height: 49px;
+      padding: 0 23px;
+      border-radius: 999px
+    }
+
+    .hero-benefits {
+      gap: 20px;
+      margin-top: 30px
+    }
+
+    .benefit {
+      gap: 9px;
+      font-size: 12px;
+      line-height: 1.35
+    }
+
+    .benefit svg {
+      width: 25px;
+      height: 25px
+    }
+
+    .hero-image {
+      min-height: clamp(510px, 42vw, 640px);
+      background: #ddc5b9
+    }
+
+    .hero-image>img {
+      object-fit: cover;
+      object-position: center 17%;
+      filter: none;
+      transform: scale(1.005)
+    }
+
+    .hero-image:after {
+      background: linear-gradient(90deg, rgba(42, 24, 25, .02), transparent 50%, rgba(30, 18, 20, .12))
+    }
+
+    .hero-script {
+      right: 4.5%;
+      top: 37%;
+      font-size: clamp(20px, 2vw, 29px)
+    }
+
+    .hero-next {
+      width: 48px;
+      height: 48px
+    }
+
+    .hero-dots {
+      bottom: 20px
+    }
+
+    .category-strip {
+      padding: 24px 0 20px;
+      background: #fffdfa;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .category-shortcuts {
+      grid-template-columns: repeat(10, minmax(75px, 1fr));
+      gap: 14px;
+      padding-bottom: 5px
+    }
+
+    .shortcut {
+      font-size: 12px;
+      font-weight: 600;
+      gap: 9px
+    }
+
+    .shortcut .circle {
+      width: 88px;
+      height: 88px;
+      border: 1px solid #f0e3df;
+      background: #f6ebe6
+    }
+
+    .shortcut .circle img {
+      object-fit: cover;
+      object-position: center top
+    }
+
+    .section.container {
+      padding-top: 62px;
+      padding-bottom: 64px
+    }
+
+    .section-head {
+      align-items: end;
+      margin-bottom: 25px;
+      gap: 24px
+    }
+
+    .section h2 {
+      font-size: clamp(34px, 3vw, 44px);
+      letter-spacing: -1.2px
+    }
+
+    .section-sub {
+      font-size: 16px;
+      line-height: 1.6
+    }
+
+    .view-all {
+      font-size: 13px;
+      padding: 11px 19px;
+      background: #fff
+    }
+
+    .filters {
+      gap: 10px;
+      padding-bottom: 22px
+    }
+
+    .filter {
+      font-size: 13px;
+      padding: 10px 17px;
+      border-radius: 999px
+    }
+
+    .product-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 28px 18px
+    }
+
+    .product-card {
+      background: #fff;
+      border: 1px solid #f0e6e2;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 3px 14px rgba(55, 33, 38, .025);
+      transition: transform .22s, box-shadow .22s
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow)
+    }
+
+    .product-photo {
+      aspect-ratio: .76/1;
+      border-radius: 0;
+      background: #f1e6e1
+    }
+
+    .product-photo img {
+      object-fit: cover;
+      object-position: center top
+    }
+
+    .discount {
+      font-size: 11px;
+      bottom: 10px;
+      left: 10px;
+      padding: 5px 9px
+    }
+
+    .wish {
+      width: 34px;
+      height: 34px;
+      right: 10px;
+      top: 10px
+    }
+
+    .product-info {
+      padding: 14px 14px 17px
+    }
+
+    .product-name {
+      font-size: 15px;
+      line-height: 1.45;
+      font-weight: 650;
+      margin: 5px 0 8px
+    }
+
+    .product-category {
+      font-size: 10px;
+      letter-spacing: 1.4px
+    }
+
+    .price-row {
+      gap: 9px
+    }
+
+    .price {
+      font-size: 18px
+    }
+
+    .old-price {
+      font-size: 13px
+    }
+
+    .rating {
+      font-size: 12px
+    }
+
+    .sample-note {
+      font-size: 12px;
+      line-height: 1.7;
+      margin-top: 24px
+    }
+
+    .editorial-row {
+      gap: 22px;
+      margin-top: 4px;
+      margin-bottom: 62px
+    }
+
+    .editorial {
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 350px;
+      box-shadow: 0 8px 28px rgba(55, 33, 38, .06)
+    }
+
+    .editorial>img {
+      object-fit: cover;
+      object-position: center top
+    }
+
+    .editorial:after {
+      background: linear-gradient(90deg, rgba(30, 20, 23, .66), rgba(30, 20, 23, .06))
+    }
+
+    .editorial-copy {
+      padding: 32px
+    }
+
+    .editorial-copy small {
+      font-size: 11px;
+      letter-spacing: 2px
+    }
+
+    .editorial-copy h3 {
+      font-size: 35px;
+      line-height: 1.1
+    }
+
+    .editorial-copy p {
+      font-size: 15px;
+      line-height: 1.7
+    }
+
+    #how-order>div {
+      padding: 32px !important;
+      border-radius: 18px !important;
+      background: linear-gradient(120deg, #f4e7e4, #f9efeb) !important;
+      border: 1px solid #ead9d7
+    }
+
+    #how-order h2 {
+      font-size: 32px !important
+    }
+
+    #how-order p {
+      font-size: 15px !important;
+      line-height: 1.8
+    }
+
+    #shop-benefits {
+      padding-bottom: 56px !important
+    }
+
+    .benefits-panel {
+      border-radius: 20px;
+      padding: clamp(28px, 4vw, 52px);
+      gap: 42px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 28px rgba(55, 33, 38, .035)
+    }
+
+    .benefits-heading h2 {
+      font-size: clamp(34px, 3.2vw, 46px);
+      line-height: 1.12
+    }
+
+    .benefits-heading p,
+    .benefits-list p {
+      font-size: 15px;
+      line-height: 1.75
+    }
+
+    .benefits-list {
+      gap: 22px
+    }
+
+    .benefits-list h3 {
+      font-size: 17px
+    }
+
+    .benefit-icon {
+      width: 45px;
+      height: 45px;
+      font-size: 22px
+    }
+
+    .faq-section {
+      padding-bottom: 68px
+    }
+
+    .faq-section .section-head {
+      margin-bottom: 22px
+    }
+
+    .faq-grid {
+      gap: 12px
+    }
+
+    .faq-grid details {
+      padding: 19px 21px;
+      border-radius: 13px;
+      background: #fff;
+      border: 1px solid var(--line)
+    }
+
+    .faq-grid summary {
+      font-size: 15px;
+      font-weight: 650
+    }
+
+    .faq-grid details p {
+      font-size: 14px;
+      line-height: 1.75
+    }
+
+    .footer {
+      padding-top: 54px
+    }
+
+    .footer p,
+    .footer a {
+      font-size: 14px;
+      line-height: 1.8
+    }
+
+    .footer h3 {
+      font-size: 13px;
+      letter-spacing: 1.5px
+    }
+
+    .cart,
+    .checkout-summary {
+      font-size: 15px
+    }
+
+    input,
+    select,
+    textarea {
+      font-size: 16px
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid rgba(135, 54, 79, .35);
+      outline-offset: 3px
+    }
+
+    @media(max-width:1100px) {
+      .container {
+        width: calc(100% - 42px)
+      }
+
+      .head-main {
+        grid-template-columns: 1fr minmax(220px, 1fr) auto;
+        gap: 16px;
+        padding: 12px 20px
+      }
+
+      .brand-title {
+        font-size: 29px
+      }
+
+      .main-nav {
+        gap: 15px;
+        overflow-x: auto;
+        justify-content: flex-start
+      }
+
+      .hero-banner {
+        grid-template-columns: .95fr 1.05fr
+      }
+
+      .hero-copy {
+        padding: 40px 30px
+      }
+
+      .hero h1 {
+        font-size: clamp(42px, 4.7vw, 58px)
+      }
+
+      .hero-copy p {
+        font-size: 16px
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr))
+      }
+
+      .category-shortcuts {
+        grid-template-columns: repeat(10, minmax(75px, 1fr))
+      }
+    }
+
+    @media(max-width:760px) {
+      body {
+        font-size: 16px
+      }
+
+      .container {
+        width: calc(100% - 30px)
+      }
+
+      .announcement {
+        font-size: 10px;
+        padding: 8px 12px
+      }
+
+      .announcement .right {
+        display: none
+      }
+
+      .head-main {
+        grid-template-columns: 1fr auto;
+        padding: 10px 15px;
+        gap: 12px
+      }
+
+      .brand img {
+        width: 45px;
+        height: 45px
+      }
+
+      .brand-title {
+        font-size: 27px
+      }
+
+      .brand-sub {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+        text-align: left
+      }
+
+      .search-form {
+        grid-column: 1/-1;
+        grid-row: 2;
+        width: 100%;
+        height: 44px
+      }
+
+      .head-actions {
+        grid-column: 2;
+        grid-row: 1;
+        gap: 8px
+      }
+
+      .head-action {
+        font-size: 10px;
+        min-width: 34px
+      }
+
+      .head-action svg {
+        width: 21px;
+        height: 21px
+      }
+
+      .nav-wrap {
+        overflow: hidden
+      }
+
+      .main-nav {
+        padding: 0 15px;
+        gap: 21px;
+        min-height: 43px
+      }
+
+      .main-nav a {
+        font-size: 12px
+      }
+
+      .hero-banner {
+        display: flex;
+        flex-direction: column;
+        min-height: unset
+      }
+
+      .hero-image {
+        order: 0;
+        min-height: 0;
+        height: clamp(320px, 92vw, 490px);
+        width: 100%
+      }
+
+      .hero-image>img {
+        object-position: center 13%
+      }
+
+      .hero-copy {
+        order: 1;
+        padding: 30px 24px 32px
+      }
+
+      .overline {
+        font-size: 10px;
+        letter-spacing: 3px
+      }
+
+      .hero h1 {
+        font-size: clamp(42px, 11vw, 58px);
+        line-height: 1.01;
+        margin-bottom: 16px
+      }
+
+      .hero-copy p {
+        font-size: 16px;
+        line-height: 1.7
+      }
+
+      .hero-ctas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%
+      }
+
+      .hero-ctas .btn {
+        font-size: 13px;
+        padding: 0 16px;
+        min-height: 46px
+      }
+
+      .hero-benefits {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+        margin-top: 24px
+      }
+
+      .benefit {
+        font-size: 12px
+      }
+
+      .hero-script {
+        right: 4%;
+        top: 33%;
+        font-size: 22px
+      }
+
+      .hero-next {
+        right: 12px;
+        width: 40px;
+        height: 40px
+      }
+
+      .hero-dots {
+        bottom: 13px
+      }
+
+      .category-strip {
+        padding: 18px 0 15px
+      }
+
+      .category-shortcuts {
+        display: flex;
+        gap: 13px;
+        overflow-x: auto;
+        padding: 0 15px 8px
+      }
+
+      .shortcut {
+        min-width: 76px;
+        font-size: 11px
+      }
+
+      .shortcut .circle {
+        width: 70px;
+        height: 70px
+      }
+
+      .section.container {
+        padding-top: 44px;
+        padding-bottom: 46px
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        gap: 12px;
+        margin-bottom: 19px
+      }
+
+      .section h2 {
+        font-size: 31px
+      }
+
+      .section-sub {
+        font-size: 14px
+      }
+
+      .view-all {
+        font-size: 11px;
+        padding: 9px 12px
+      }
+
+      .filters {
+        gap: 8px;
+        padding-bottom: 17px
+      }
+
+      .filter {
+        font-size: 12px;
+        padding: 9px 13px
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px 11px
+      }
+
+      .product-card {
+        border-radius: 11px
+      }
+
+      .product-photo {
+        aspect-ratio: .73/1
+      }
+
+      .product-info {
+        padding: 10px 10px 13px
+      }
+
+      .product-name {
+        font-size: 13px;
+        line-height: 1.4
+      }
+
+      .price {
+        font-size: 16px
+      }
+
+      .old-price {
+        font-size: 11px
+      }
+
+      .rating {
+        font-size: 11px
+      }
+
+      .discount {
+        font-size: 10px
+      }
+
+      .editorial-row {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-bottom: 42px
+      }
+
+      .editorial {
+        min-height: 310px;
+        border-radius: 15px
+      }
+
+      .editorial-copy {
+        padding: 22px
+      }
+
+      .editorial-copy h3 {
+        font-size: 30px
+      }
+
+      .editorial-copy p {
+        font-size: 14px
+      }
+
+      #how-order {
+        padding-bottom: 28px !important
+      }
+
+      #how-order>div {
+        padding: 23px !important
+      }
+
+      #how-order h2 {
+        font-size: 28px !important
+      }
+
+      #how-order p {
+        font-size: 14px !important
+      }
+
+      .benefits-panel {
+        grid-template-columns: 1fr;
+        padding: 24px 20px;
+        gap: 25px
+      }
+
+      .benefits-heading h2 {
+        font-size: 34px
+      }
+
+      .benefits-heading p,
+      .benefits-list p {
+        font-size: 14px
+      }
+
+      .benefits-list h3 {
+        font-size: 15px
+      }
+
+      .benefit-icon {
+        width: 40px;
+        height: 40px
+      }
+
+      .faq-section {
+        padding-bottom: 45px
+      }
+
+      .faq-grid {
+        grid-template-columns: 1fr
+      }
+
+      .faq-grid summary {
+        font-size: 14px
+      }
+
+      .faq-grid details p {
+        font-size: 13px
+      }
+
+      .footer {
+        padding-top: 38px
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px 18px
+      }
+
+      .footer p,
+      .footer a {
+        font-size: 12px
+      }
+    }
+
+    @media(max-width:390px) {
+      .head-actions {
+        gap: 3px
+      }
+
+      .head-action span:not(.count) {
+        font-size: 9px
+      }
+
+      .brand-title {
+        font-size: 24px
+      }
+
+      .hero-ctas .btn {
+        width: 100%
+      }
+
+      .section-head {
+        align-items: start
+      }
+
+      .section h2 {
+        font-size: 28px
+      }
+    }
+
+
+    /* Product cards: consistent 10px padding */
+    .product-card {
+      padding: 10px;
+      border-radius: 14px;
+    }
+
+    .product-photo {
+      border-radius: 8px;
+    }
+
+    .product-info {
+      padding: 10px 0 3px;
+    }
+
+    @media(max-width:650px) {
+      .product-card {
+        padding: 10px;
+        border-radius: 12px
+      }
+
+      .product-info {
+        padding: 10px 0 2px
+      }
+    }
+  </style>
+</head>
+
+<body><a class="skip" href="#main">Skip to content</a>
+  <div class="announcement">
+    <div class="announcement-inner"><span><span class="spark">✦</span> Trendy Looks · Curated Fashion · Affordable
+        Finds</span><span class="right">Order Assistance&nbsp;&nbsp; | &nbsp;&nbsp;Clear Details&nbsp;&nbsp; |
+        &nbsp;&nbsp;Curated Styles</span></div>
+  </div>
+  <header class="site-head">
+    <div class="head-main">
+      <a class="brand" href="#top" aria-label="Ananya Finds home"><img src="assets/portrait-logo-hero.png"
+          alt="Ananya Finds portrait"><span><span class="brand-title">ananya <em>finds</em></span><span
+            class="brand-sub">Fashion · Finds · You</span></span></a>
+      <form class="search-form" id="searchForm"><input id="searchInput" type="search"
+          placeholder="Search for dresses, co-ords, tops, sarees…" aria-label="Search products"><button
+          type="submit">Search</button></form>
+      <div class="head-actions"><button class="head-action" id="wishlistJump" aria-label="Wishlist"><svg
+            viewBox="0 0 24 24">
+            <path d="M20.8 8.8c0 5.4-8.8 10.2-8.8 10.2S3.2 14.2 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z" />
+          </svg><span>Wishlist</span></button><button class="head-action" id="accountBtn" aria-label="Account"><svg
+            viewBox="0 0 24 24">
+            <circle cx="12" cy="7.5" r="4" />
+            <path d="M4.5 21c.3-4.1 3.1-6.5 7.5-6.5s7.2 2.4 7.5 6.5" />
+          </svg><span>Account</span></button><button class="head-action" id="openCart" aria-label="Shopping cart"><svg
+            viewBox="0 0 24 24">
+            <path d="M3 4h2l2.2 12.2h11.9L22 8H6" />
+            <circle cx="9" cy="20" r="1.2" />
+            <circle cx="18" cy="20" r="1.2" />
+          </svg><span>Cart</span><span class="count" id="cartCount">0</span></button></div>
+    </div>
+    <div class="nav-wrap">
+      <nav class="main-nav" aria-label="Shop categories"><a class="active" href="#top">Home</a><a href="#products">New
+          Arrivals</a><a href="#products" data-filter-link="Ethnic">Kurtis &amp; Suits</a><a href="#products"
+          data-filter-link="Co-ord">Co-ords</a><a href="#products" data-filter-link="Casual">Tops</a><a href="#products"
+          data-filter-link="Ethnic">Dresses</a><a href="#products" data-filter-link="Ethnic">Sarees</a><a
+          href="#products" data-filter-link="Casual">Bottoms</a><a href="#products"
+          data-filter-link="Accessories">Accessories</a><a href="#products" data-filter-link="Budget">Under ₹499</a><a
+          href="#products">Trending</a><a href="#how-order">Track Order</a></nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero container" id="top">
+      <div class="hero-banner">
+        <div class="hero-copy">
+          <div class="overline">Ananya Finds</div>
+          <h1>Trendy Fashion<br>Made Easy<br>with <em>Curated Finds</em></h1>
+          <p>Discover handpicked outfit inspiration, co-ords, tops and everyday styles — thoughtfully curated for your
+            wardrobe.</p>
+          <div class="hero-ctas"><a class="btn btn-primary" href="#products">Shop New Arrivals <span>→</span></a><a
+              class="btn btn-outline" href="#categories">Explore Collection</a></div>
+          <div class="hero-benefits">
+            <div class="benefit"><svg viewBox="0 0 24 24">
+                <path d="M2 7h13v11H2zM15 11h4l3 3v4h-7z" />
+                <circle cx="6" cy="19" r="2" />
+                <circle cx="18" cy="19" r="2" />
+              </svg><span>Order<br>Assistance</span></div>
+            <div class="benefit"><svg viewBox="0 0 24 24">
+                <path d="m12 2 8 4v6c0 5-4 8-8 10-4-2-8-5-8-10V6z" />
+                <path d="m8 12 2.5 2.5L16 9" />
+              </svg><span>Clear<br>Policies*</span></div>
+            <div class="benefit"><svg viewBox="0 0 24 24">
+                <path d="m12 2 3 3 4 .3.3 4L22 12l-2.7 3.7-.3 4-4 .3-3 3-3-3-4-.3-.3-4L2 12l2.7-3.7.3-4 4-.3z" />
+                <path d="m8 12 2.5 2.5L16 9" />
+              </svg><span>Trendy<br>Collections</span></div>
+            <div class="benefit"><svg viewBox="0 0 24 24">
+                <path
+                  d="M20.8 8.8c0 5.4-8.8 10.2-8.8 10.2S3.2 14.2 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z" />
+              </svg><span>Handpicked<br>with Love</span></div>
+          </div>
+        </div>
+        <div class="hero-image"><img src="assets/portrait-logo-hero.png" alt="Ananya Finds fashion portrait"
+            fetchpriority="high">
+          <div class="hero-script">Fashion<br>Looks<br>Lifestyle<br>&amp; More ♡</div><button class="hero-next"
+            id="heroNext" aria-label="Show next featured look">›</button>
+          <div class="hero-dots"><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+    </section>
+    <section class="category-strip" id="categories">
+      <div class="container">
+        <div class="category-shortcuts">
+          <button class="shortcut active" data-filter="All"><span class="circle"><span
+                class="all-icon">▦</span></span><span>All</span></button>
+          <button class="shortcut" data-filter="Ethnic"><span class="circle"><img src="assets/look-burgundy.webp"
+                alt=""></span><span>Kurtis &amp; Suits</span></button>
+          <button class="shortcut" data-filter="Co-ord"><span class="circle"><img src="assets/look-blue-coord.webp"
+                alt=""></span><span>Co-ords</span></button>
+          <button class="shortcut" data-filter="Casual"><span class="circle"><img
+                src="assets/look-casual-black-denim.webp" alt=""></span><span>Tops</span></button>
+          <button class="shortcut" data-filter="Ethnic"><span class="circle"><img src="assets/look-fuchsia.webp"
+                alt=""></span><span>Dresses</span></button>
+          <button class="shortcut" data-filter="Ethnic"><span class="circle"><img src="assets/look-white-coord.webp"
+                alt=""></span><span>Sarees</span></button>
+          <button class="shortcut" data-filter="Casual"><span class="circle"><img src="assets/look-white-coord.webp"
+                alt=""></span><span>Bottoms</span></button>
+          <button class="shortcut" data-filter="Accessories"><span class="circle"><img
+                src="assets/portrait-logo-hero.png" alt=""></span><span>Accessories</span></button>
+          <button class="shortcut" data-filter="Budget"><span class="circle"><span class="budget">₹499<small
+                  style="display:block;color:#8f3d58;font:10px Arial">and below</small></span></span><span>Under
+              ₹499</span></button>
+          <button class="shortcut" data-filter="All"><span class="circle"><img src="assets/look-blue-coord.webp"
+                alt=""></span><span>Trending</span></button>
+        </div>
+      </div>
+    </section>
+    <section class="section container" id="products">
+      <div class="section-head">
+        <div>
+          <h2>Top Picks for You <span class="star">✦</span></h2>
+          <p class="section-sub">Handpicked styles and everyday wardrobe finds</p>
+        </div><a class="view-all" href="#products" id="viewAll">View All →</a>
+      </div>
+      <div class="filters" aria-label="Product filters"><button class="filter active" data-filter="All">All
+          products</button><button class="filter" data-filter="Ethnic">Kurtis &amp; Suits</button><button class="filter"
+          data-filter="Co-ord">Co-ords</button><button class="filter" data-filter="Casual">Tops &amp;
+          Casual</button><button class="filter" data-filter="Budget">Under ₹499</button></div>
+      <div class="product-grid" id="productGrid"></div>
+      <p class="sample-note">*Product names, prices, discounts and ratings are demo placeholders. Verify listings,
+        stock, seller policies, COD and returns before launch.</p>
+    </section>
+    <section class="container editorial-row">
+      <article class="editorial"><img src="assets/look-fuchsia-hero.png" alt="Embroidered festive fashion" loading="lazy">
+        <div class="editorial-copy"><small>Festive favourites</small>
+          <h3>A little extra sparkle.</h3>
+          <p>Dress up your celebrations with colour, embroidery and statement details.</p><a class="btn"
+            href="#products" data-filter-link="Ethnic">Shop ethnic looks →</a>
+        </div>
+      </article>
+      <article class="editorial"><img src="assets/look-blue-coord-hero.png" alt="Casual everyday outfit"
+          loading="lazy">
+        <div class="editorial-copy"><small>Everyday style</small>
+          <h3>Easy looks, everyday.</h3>
+          <p>Find your comfortable go-to styles for casual days and last-minute plans.</p><a class="btn"
+            href="#products" data-filter-link="Casual">Explore casual →</a>
+        </div>
+      </article>
+    </section>
+    <section class="container" id="how-order" style="padding:0 0 35px">
+      <div style="background:#f2e5e2;border-radius:12px;padding:23px 25px">
+        <h2 style="font:27px Georgia,serif;margin:0 0 8px">Shopping made simple</h2>
+        <p style="font-size:12px;color:#67595c;margin:0">Add products to your cart and prepare an order summary. Actual
+          availability, final price, shipping, payment, COD and return terms must be confirmed by the seller before
+          accepting an order.</p>
+      </div>
+    </section>
+    <section class="container" id="shop-benefits" style="padding:0 0 42px">
+      <div class="benefits-panel">
+        <div class="benefits-heading"><span class="overline">The Ananya Finds promise</span>
+          <h2>Thoughtful finds.<br><em>Clear, simple shopping.</em></h2>
+          <p>Explore the look, check the details, and confirm every order before payment. No surprises hidden in the
+            fine print.</p>
+        </div>
+        <div class="benefits-list">
+          <article><span class="benefit-icon">♡</span>
+            <div>
+              <h3>Curated for everyday style</h3>
+              <p>Ethnic wear, co-ords and casual picks in one easy-to-browse collection.</p>
+            </div>
+          </article>
+          <article><span class="benefit-icon">✓</span>
+            <div>
+              <h3>Order details confirmed</h3>
+              <p>Size, final price, availability and delivery terms are confirmed before an order is accepted.</p>
+            </div>
+          </article>
+          <article><span class="benefit-icon">↗</span>
+            <div>
+              <h3>Personal order assistance</h3>
+              <p>Use the demo checkout to review your details and see an order confirmation preview.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="container faq-section" id="faq">
+      <div class="section-head">
+        <div>
+          <h2>Good to know</h2>
+          <p class="section-sub">A few quick answers before you order.</p>
+        </div>
+      </div>
+      <div class="faq-grid">
+        <details>
+          <summary>Are the listed prices final?</summary>
+          <p>No. This is a prototype catalogue. Actual product price, stock, sizes and delivery charges must be verified
+            before launch.</p>
+        </details>
+        <details>
+          <summary>How does checkout work in this demo?</summary>
+          <p>You can enter sample customer and delivery details and place a test order. It does not charge money or send
+            data to a server.</p>
+        </details>
+        <details>
+          <summary>Can I pay cash on delivery?</summary>
+          <p>COD is shown as a demo option only. The seller must confirm whether COD is available for the selected
+            product and delivery PIN code.</p>
+        </details>
+        <details>
+          <summary>What about returns and exchanges?</summary>
+          <p>Return and exchange rules must be displayed from the seller's verified policy before the live store accepts
+            orders.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">ananya finds</div>
+          <p>Curated fashion finds for everyday wardrobes, celebrations and everything in between.</p>
+        </div>
+        <div class="footer-links"><a href="#products">Shop all</a><a href="#categories">Categories</a><a
+            href="https://instagram.com/ananya_findx" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a
+            href="#how-order">Order help</a></div>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> Ananya Finds</span><span>Independent reseller
+          storefront · Not affiliated with or an official Meesho store</span></div>
+    </div>
+  </footer>
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart" id="cart" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-head">
+      <h2>Your Cart <span id="cartTotalCount" style="font:12px Arial;color:var(--muted)">(0)</span></h2><button
+        class="close" id="closeCart" aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-foot">
+      <div class="subtotal"><span>Sample subtotal</span><span id="subtotal">₹0</span></div>
+      <p class="disclaimer">Sample pricing only. Confirm final price, availability, shipping and payment before order
+        acceptance.</p><button class="checkout" id="checkout">Prepare order summary</button>
+    </div>
+  </aside>
+  <div class="checkout-overlay" id="checkoutOverlay" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <div class="checkout-modal">
+      <div class="checkout-head">
+        <h2 id="checkoutTitle">Secure your style picks</h2><button class="close" id="closeCheckout" type="button"
+          aria-label="Close checkout">×</button>
+      </div>
+      <div id="checkoutMain">
+        <div class="checkout-body">
+          <form class="checkout-form" id="checkoutForm">
+            <h3>Delivery details</h3>
+            <div class="checkout-fields">
+              <div class="checkout-field"><label for="customerName">Full name *</label><input id="customerName"
+                  name="customerName" autocomplete="name" required minlength="2" placeholder="Your full name"></div>
+              <div class="checkout-field"><label for="customerPhone">Mobile number *</label><input id="customerPhone"
+                  name="customerPhone" type="tel" autocomplete="tel" required pattern="[6-9][0-9]{9}" maxlength="10"
+                  placeholder="10-digit mobile number"></div>
+              <div class="checkout-field full"><label for="customerEmail">Email (optional)</label><input
+                  id="customerEmail" name="customerEmail" type="email" autocomplete="email"
+                  placeholder="you@example.com"></div>
+              <div class="checkout-field full"><label for="customerAddress">Full delivery address *</label><textarea
+                  id="customerAddress" name="customerAddress" autocomplete="street-address" required minlength="8"
+                  placeholder="House / street, area, landmark"></textarea></div>
+              <div class="checkout-field"><label for="customerCity">City *</label><input id="customerCity"
+                  name="customerCity" autocomplete="address-level2" required placeholder="City"></div>
+              <div class="checkout-field"><label for="customerState">State *</label><input id="customerState"
+                  name="customerState" autocomplete="address-level1" required placeholder="State"></div>
+              <div class="checkout-field"><label for="customerPin">PIN code *</label><input id="customerPin"
+                  name="customerPin" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="postal-code"
+                  required placeholder="6-digit PIN"></div>
+              <div class="checkout-field"><label for="customerNote">Order note (optional)</label><input
+                  id="customerNote" name="customerNote" placeholder="Size preference etc."></div>
+            </div>
+            <h3 style="margin-top:22px">Payment preference</h3>
+            <div class="payment-options">
+              <label class="payment-option"><input type="radio" name="payment" value="Cash on delivery (demo)"
+                  checked><span><strong>Cash on delivery</strong><small>Demo choice only; availability must be confirmed
+                    by the seller.</small></span></label>
+              <label class="payment-option"><input type="radio" name="payment"
+                  value="UPI / online payment (demo)"><span><strong>UPI / online payment</strong><small>No payment is
+                    collected in this prototype.</small></span></label>
+            </div>
+          </form>
+          <aside class="checkout-summary">
+            <h3>Your order</h3>
+            <div class="checkout-lines" id="checkoutLines"></div>
+            <div class="checkout-totals">
+              <div class="subtotal"><span>Items subtotal</span><span id="checkoutSubtotal">₹0</span></div>
+              <div class="subtotal"><span>Delivery</span><span id="checkoutDelivery">To be confirmed</span></div>
+              <div class="checkout-total"><span>Estimated total</span><span id="checkoutTotal">₹0</span></div>
+            </div>
+            <p class="checkout-note">This is a dummy checkout for UI testing. It does not contact a seller, reserve
+              stock, send an order to a server, or collect payment.</p><button class="place-order" id="placeDemoOrder"
+              type="button">Place demo order →</button>
+            <p class="demo-disclaimer">TEST ORDER ONLY · NO REAL PAYMENT</p>
+          </aside>
+        </div>
+      </div>
+      <div class="order-success" id="orderSuccess">
+        <div class="success-mark">✓</div>
+        <h2>Demo order placed!</h2>
+        <p id="successMessage">Your sample order has been created locally for this preview.</p>
+        <div class="order-number" id="demoOrderNumber"></div>
+        <p>Nothing was charged and no real order was sent. Connect a backend and verified payment/order service before
+          launch.</p><button class="btn btn-primary" id="finishDemoOrder" type="button">Continue shopping</button>
+      </div>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+    const PRODUCTS = [
+      { id: 'plum', name: 'Sequined Lehenga Set', category: 'Ethnic', price: 899, old: 1499, discount: '-40%', image: 'assets/look-burgundy.webp', rating: '4.5 (1.2k)' },
+      { id: 'pink', name: 'Embroidered Anarkali Suit', category: 'Ethnic', price: 649, old: 999, discount: '-35%', image: 'assets/look-fuchsia.webp', rating: '4.4 (980)' },
+      { id: 'blue', name: 'Ethnic Co-ord Set', category: 'Co-ord', price: 799, old: 1299, discount: '-38%', image: 'assets/look-blue-coord.webp', rating: '4.6 (1.8k)' },
+      { id: 'white', name: 'Casual Co-ord Set', category: 'Co-ord', price: 599, old: 1049, discount: '-42%', image: 'assets/look-white-coord.webp', rating: '4.3 (770)' },
+      { id: 'black', name: 'Printed Top with Jeans', category: 'Casual', price: 399, old: 599, discount: '', image: 'assets/look-casual-black-denim.webp', rating: '4.4 (1.1k)' },
+      { id: 'floral', name: 'Floral Puff-Sleeve Top', category: 'Casual', price: 349, old: 499, discount: '', image: 'assets/portrait-logo-hero.png', rating: '4.5 (2.1k)' }
+    ]; let filter = 'All', cart = [], wishlist = new Set(), toastTimer;
+    const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)], money = n => '₹' + Number(n).toLocaleString('en-IN');
+    function toast(t) { $('#toast').textContent = t; $('#toast').classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => $('#toast').classList.remove('show'), 2300) }
+    function renderProducts() { let q = $('#searchInput').value.trim().toLowerCase(); let list = PRODUCTS.filter(p => (filter === 'All' || (filter === 'Budget' ? p.price <= 499 : filter === 'Accessories' ? false : p.category === filter)) && (`${p.name} ${p.category}`.toLowerCase().includes(q))); $('#productGrid').innerHTML = list.map(p => `<article class="product-card"><div class="product-photo"><img src="${p.image}" alt="${p.name}" loading="lazy">${p.discount ? `<span class="discount">${p.discount}</span>` : ''}<button class="wish" data-wish="${p.id}" aria-label="Add ${p.name} to wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 8.8c0 5.4-8.8 10.2-8.8 10.2S3.2 14.2 3.2 8.8A4.8 4.8 0 0 1 12 6.2a4.8 4.8 0 0 1 8.8 2.6Z"/></svg></button></div><div class="product-title" title="${p.name}">${p.name}</div><div class="price-row"><span class="price">${money(p.price)}</span>${p.old ? `<span class="old-price">${money(p.old)}</span>` : ''}</div><div class="rating"><b>★</b>${p.rating}</div><button class="add-product" data-add="${p.id}">Add to cart +</button></article>`).join(''); if (!list.length) $('#productGrid').innerHTML = '<p style="grid-column:1/-1;color:#74696b;font-size:13px">No products found. Try another category or search.</p>'; }
+    function renderCart() { let count = cart.reduce((s, i) => s + i.qty, 0), total = cart.reduce((s, i) => s + PRODUCTS.find(p => p.id === i.id).price * i.qty, 0); $('#cartCount').textContent = count; $('#cartTotalCount').textContent = `(${count})`; $('#subtotal').textContent = money(total); $('#cartItems').innerHTML = cart.length ? cart.map(i => { let p = PRODUCTS.find(p => p.id === i.id); return `<div class="cart-item"><img src="${p.image}" alt=""><div><h3>${p.name}</h3><p>${money(p.price)}</p><div class="qty"><button data-qty="-1" data-id="${p.id}">−</button><span>${i.qty}</span><button data-qty="1" data-id="${p.id}">+</button></div><button class="remove" data-remove="${p.id}">Remove</button></div><b style="font-size:11px">${money(p.price * i.qty)}</b></div>` }).join('') : '<div class="empty">Your cart is empty.<br>Find something lovely to add.</div>' }
+    function add(id) { let x = cart.find(i => i.id === id); if (x) x.qty++; else cart.push({ id, qty: 1 }); renderCart(); toast('Added to cart') }
+    function openCart() { renderCart(); $('#overlay').classList.add('open'); $('#cart').classList.add('open'); $('#cart').setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden' } function closeCart() { $('#overlay').classList.remove('open'); $('#cart').classList.remove('open'); $('#cart').setAttribute('aria-hidden', 'true'); document.body.style.overflow = '' }
+    function setFilter(v) { filter = v; $$('[data-filter]').forEach(b => b.classList.toggle('active', b.dataset.filter === v)); renderProducts() }
+    $('#productGrid').addEventListener('click', e => { let a = e.target.closest('[data-add]'), w = e.target.closest('[data-wish]'); if (a) add(a.dataset.add); if (w) { let id = w.dataset.wish; if (wishlist.has(id)) { wishlist.delete(id); w.style.color = 'var(--rose)'; toast('Removed from wishlist') } else { wishlist.add(id); w.style.color = '#e04468'; toast('Saved to wishlist') } } });
+    $$('[data-filter]').forEach(b => b.addEventListener('click', () => { setFilter(b.dataset.filter); $('#products').scrollIntoView({ behavior: 'smooth' }) })); $$('[data-filter-link]').forEach(a => a.addEventListener('click', () => setFilter(a.dataset.filterLink))); $('#searchForm').addEventListener('submit', e => { e.preventDefault(); renderProducts(); $('#products').scrollIntoView({ behavior: 'smooth' }) }); $('#searchInput').addEventListener('input', renderProducts); $('#openCart').addEventListener('click', openCart); $('#closeCart').addEventListener('click', closeCart); $('#overlay').addEventListener('click', closeCart); $('#cartItems').addEventListener('click', e => { let q = e.target.closest('[data-qty]'), r = e.target.closest('[data-remove]'); if (q) { let i = cart.find(i => i.id === q.dataset.id); if (i) { i.qty += Number(q.dataset.qty); if (i.qty < 1) cart = cart.filter(x => x !== i); renderCart() } } if (r) { cart = cart.filter(i => i.id !== r.dataset.remove); renderCart() } }); function openCheckout() {
+      if (!cart.length) { toast('Your cart is empty'); return }
+      renderCheckoutSummary();
+      $('#checkoutMain').style.display = 'block'; $('#orderSuccess').style.display = 'none';
+      $('#checkoutOverlay').classList.add('open'); document.body.style.overflow = 'hidden';
+    }
+    function closeCheckout() { $('#checkoutOverlay').classList.remove('open'); document.body.style.overflow = ''; }
+    function renderCheckoutSummary() {
+      const total = cart.reduce((sum, i) => sum + PRODUCTS.find(p => p.id === i.id).price * i.qty, 0);
+      $('#checkoutLines').innerHTML = cart.map(i => { const p = PRODUCTS.find(p => p.id === i.id); return `<div class="checkout-line"><img src="${p.image}" alt=""><div><strong>${p.name}</strong><small>Qty: ${i.qty}</small></div><b>${money(p.price * i.qty)}</b></div>` }).join('');
+      $('#checkoutSubtotal').textContent = money(total); $('#checkoutTotal').textContent = money(total);
+    }
+    $('#checkout').addEventListener('click', () => { closeCart(); openCheckout() });
+    $('#closeCheckout').addEventListener('click', closeCheckout);
+    $('#checkoutOverlay').addEventListener('click', e => { if (e.target.id === 'checkoutOverlay') closeCheckout() });
+    $('#placeDemoOrder').addEventListener('click', () => {
+      const form = $('#checkoutForm');
+      if (!form.reportValidity()) return;
+      if (!cart.length) { toast('Your cart is empty'); closeCheckout(); return }
+      const data = new FormData(form);
+      const orderId = 'AF-DEMO-' + Math.random().toString(36).slice(2, 8).toUpperCase();
+      const name = String(data.get('customerName') || 'Customer').trim();
+      const total = cart.reduce((sum, i) => sum + PRODUCTS.find(p => p.id === i.id).price * i.qty, 0);
+      $('#successMessage').textContent = `Thanks, ${name}. Your demo order summary totals ${money(total)}. This confirmation exists only in this browser preview.`;
+      $('#demoOrderNumber').textContent = orderId;
+      $('#checkoutMain').style.display = 'none'; $('#orderSuccess').style.display = 'block';
+      cart = []; renderCart();
+    });
+    $('#finishDemoOrder').addEventListener('click', () => { closeCheckout(); $('#checkoutForm').reset(); $('#searchInput').value = ''; setFilter('All'); window.scrollTo({ top: 0, behavior: 'smooth' }) });
+    $('#wishlistJump').addEventListener('click', () => { toast(wishlist.size ? `${wishlist.size} saved item(s) in your wishlist` : 'Tap the heart on a product to save it') }); $('#accountBtn').addEventListener('click', () => toast('Customer accounts are not enabled in this demo')); $('#viewAll').addEventListener('click', () => setFilter('All')); $('#heroNext').addEventListener('click', () => { let img = $('.hero-image>img'); let list = ['assets/portrait-logo-hero.png', 'assets/look-fuchsia-hero.png', 'assets/look-blue-coord-hero.png']; let idx = list.indexOf(img.getAttribute('src')); img.src = list[(idx + 1) % list.length]; $$('.hero-dots i').forEach((d, i) => d.style.background = i === (idx + 1) % 3 ? 'var(--rose)' : '#fff9') }); $('#year').textContent = new Date().getFullYear(); document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCart() }); renderProducts(); renderCart();
+  </script>
+</body>
+
+</html>
